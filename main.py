@@ -1,3 +1,5 @@
+from context_manager import MyContextManager
+
 cook_book = dict()
 
 
@@ -14,7 +16,7 @@ def ins_ingredients(dish, ingredients):
 
 
 def main():
-    with open('recipes.txt', encoding='utf-8') as file:
+    with MyContextManager('recipes.txt') as file:
         counter = 0
         while True:
             current_dish = file.readline().strip()
